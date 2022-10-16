@@ -28,30 +28,13 @@ PowerShell -ExecutionPolicy RemoteSigned .\.devcontainer\preCreateCommand.ps1
 If you do not use Github CLI or GnuPG, please modify `.devcontainer/docker-compose.yml` (and `.devcontainer/Dockerfile`, `.devcontainer/postCreateCommand.sh`).
 Then **Reopen Folder in Container** with VS Code extension.
 
-### Check whether this project is correctly recognized
+### Calculate TF-IDF
 
 ```sh
-$ python -m ml_hands_on.sample
-Hello World!
+python -m ml_hands_on.tfidf
 ```
 
-If you use `poetry install --no-root` instead, you need to move `src/` to execute the module or set `PYTHONPATH` to `src`.
-
-### Test this project by pytest
-
-```sh
-$ python -m pytest tests/
-===== test session starts =====
-platform linux -- Python 3.10.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
-rootdir: /workspace/ml-hands-on
-collected 1 item
-
-tests/test_sample.py .   [100%]
-
-====== 1 passed in 0.01s ======
-```
-
-Imports in test file(s) are valid owing to `poetry install` that makes this project be a package. If you do not want to make the package, use `poetry install --no-root` instead, and set `PYTHONPATH` to `src` in some way.
+The results will be written in `output/`.
 
 ## Notes
 
