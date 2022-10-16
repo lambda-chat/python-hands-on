@@ -4,7 +4,6 @@ from typing import cast
 
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import xgboost as xgb
 from sklearn.datasets import load_breast_cancer
 from sklearn.metrics import accuracy_score
