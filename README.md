@@ -31,7 +31,7 @@ Then **Reopen Folder in Container** with VS Code extension.
 ### Check whether this project is correctly recognized
 
 ```sh
-$ python -m package_name.sample
+$ python -m ml_hands_on.sample
 Hello World!
 ```
 
@@ -43,7 +43,7 @@ If you use `poetry install --no-root` instead, you need to move `src/` to execut
 $ python -m pytest tests/
 ===== test session starts =====
 platform linux -- Python 3.10.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
-rootdir: /workspace/WORKSPACE
+rootdir: /workspace/ml-hands-on
 collected 1 item
 
 tests/test_sample.py .   [100%]

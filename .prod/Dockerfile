@@ -4,13 +4,13 @@ FROM python:3.9.12-bullseye
 
 # Sample usage:
 #     $ docker compose up -d
-#     $ docker exec prod-container python -m package_name.sample
+#     $ docker exec prod-container python -m ml_hands_on.sample
 #     Hello World!
 #     $ docker compose down
 
 # Copy files
-COPY . /src/WORKSPACE
-WORKDIR /src/WORKSPACE
+COPY . /src/ml-hands-on
+WORKDIR /src/ml-hands-on
 
 # Create a user
 ARG USER=docker-user

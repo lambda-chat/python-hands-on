@@ -1,11 +1,11 @@
 #!/bin/bash -eux
 
 # How To Use postCreateCommand.sh
-#   (bash) $ PASSWORD=password .devcontainer/postCreateCommand.sh
-#   (fish) $ env PASSWORD=password .devcontainer/postCreateCommand.sh
+#   (bash) $ PASSWORD=ml .devcontainer/postCreateCommand.sh
+#   (fish) $ env PASSWORD=ml .devcontainer/postCreateCommand.sh
 
 # chown dist/ volume
-echo $PASSWORD | sudo --stdin chown -R docker-user:docker /workspace/WORKSPACE/dist/
+echo $PASSWORD | sudo --stdin chown -R docker-user:docker /workspace/ml-hands-on/dist/
 
 # gpg setting
 echo $PASSWORD | sudo --stdin mkdir -p /opt/homebrew/bin
