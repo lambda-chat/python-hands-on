@@ -63,7 +63,7 @@ def calclulate_tfidf(corpus: Bunch) -> pd.DataFrame:
     return tfidf
 
 
-if __name__ == "__main__":
+def main() -> None:
     from ml_hands_on import PROJECT_ROOT
 
     OUTDIR = PROJECT_ROOT / "output"
@@ -72,3 +72,7 @@ if __name__ == "__main__":
     categories = ["rec.motorcycles", "sci.med"]
     tfidf = calclulate_tfidf(fetch_train_corpus(categories=categories))
     tfidf.to_csv(OUTDIR / "tfidf.csv", index=False, header=True)
+
+
+if __name__ == "__main__":
+    main()
