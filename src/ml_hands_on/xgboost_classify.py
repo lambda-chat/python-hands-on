@@ -48,10 +48,11 @@ def main() -> None:
     OUTDIR = PROJECT_ROOT / "output"
     OUTDIR.mkdir(exist_ok=True, parents=True)
 
+    test_size = 0.2
     cancer_dataset = cast(Bunch, load_breast_cancer())
-    acc, model = calculate_xgboost_accuracy(cancer_dataset)
+    acc, model = calculate_xgboost_accuracy(cancer_dataset, test_size=test_size)
 
-    print(f"acc: {acc}")
+    print(f"acc: {acc} (test_size: {test_size})")
 
     fig, ax1 = plt.subplots(figsize=(20, 10))
     xgb.plot_importance(model, ax=ax1)
