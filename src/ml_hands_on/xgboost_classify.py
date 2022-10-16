@@ -1,17 +1,16 @@
+import logging
 import os
 from typing import cast
-import xgboost as xgb
-from xgboost import Booster
-import logging
 
-from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import xgboost as xgb
 from sklearn.datasets import load_breast_cancer
 from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 from sklearn.utils._bunch import Bunch
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+from xgboost import Booster
 
 logger = logging.getLogger(__name__)
 hander = logging.StreamHandler()
