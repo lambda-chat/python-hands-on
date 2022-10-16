@@ -36,11 +36,20 @@ python -m ml_hands_on.tfidf
 
 The results will be written in `output/`.
 
+### Classify by XGBoost
+
+```sh
+python -m ml_hands_on.xgboost_classify
+```
+
+The potential accuracy will be shown in strout and the feature importances will be output to `output/`.
+
 ## Notes
 
 - `dist/` is empty volume which masks original `dist/` if it exists.
 - You cannot commit with GUI if GPG is activated. Use the integrated terminal instead.
 - If you already created virtualenvs outside of container, please remove `.venv` before "Reopen Folder in Container".
+- If you want to output debug log, set the environ variable `DEBUG` be truthy string ('0' is truthy here). On bash, `DEBUG=1 <command>`. On fish, `env DEBUG=1 <command>`.
 
 ## Known issues
 
