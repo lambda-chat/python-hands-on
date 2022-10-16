@@ -6,7 +6,7 @@ from typing import Optional, cast
 import pandas as pd
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.utils._bunch import Bunch
+from sklearn.utils import Bunch
 
 logger = logging.getLogger(__name__)
 hander = logging.StreamHandler()
