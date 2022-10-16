@@ -57,7 +57,7 @@ def calclulate_tfidf(corpus: Bunch) -> pd.DataFrame:
                 for news_id in range(0, tfidf_matrix.shape[0])
                 for word_id in tfidf_matrix[news_id, :].indices
             ),
-            key=lambda d: (d["news_id"], d["tfidf"]),
+            key=lambda d: (d["news_id"], -d["tfidf"]),  # ascending & descending
         )
     )
     return tfidf
@@ -70,5 +70,5 @@ if __name__ == "__main__":
     OUTDIR.mkdir(exist_ok=True, parents=True)
 
     categories = ["rec.motorcycles", "sci.med"]
-    tfidf = calclulate_tfidf(fetch_train_corpus(categories))
+    tfidf = calclulate_tfidf(fetch_train_corpus(categories=categories))
     tfidf.to_csv(OUTDIR / "tfidf.csv", index=False, header=True)
