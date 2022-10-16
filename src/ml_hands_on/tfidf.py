@@ -36,13 +36,13 @@ def fetch_train_corpus(categories: Optional[Iterable[str]] = None) -> Bunch:
 
 
 def calclulate_tfidf(corpus: Bunch) -> pd.DataFrame:
-    count_vectorizer = CountVectorizer()
+    count_vectorizer = CountVectorizer(stop_words="english")
     bow = count_vectorizer.fit_transform(corpus.data)  # csr_matrix
 
     logger.debug(f"bow's type: {type(bow)}")
     logger.debug(f"bow's shape: {bow.shape}")
 
-    tfidf_transformer = TfidfTransformer()  # FIXME: remove stop words
+    tfidf_transformer = TfidfTransformer()
     tfidf_matrix = tfidf_transformer.fit_transform(bow)
 
     inverse_vocab = {v: k for k, v in count_vectorizer.vocabulary_.items()}
